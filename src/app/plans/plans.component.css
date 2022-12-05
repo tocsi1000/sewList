@@ -1,0 +1,13 @@
+.pattern{
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 8px;
+    width: 200px;
+    height: 350px;
+    text-align: center;
+    margin: 5px;
+}
+
+.isDone {
+    color:#2bc414;
+}

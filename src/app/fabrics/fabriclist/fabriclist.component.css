@@ -1,0 +1,31 @@
+label {
+    padding: 5px;
+}
+
+.customhr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-color: rgb(245, 142, 24);
+}
+
+.slidebox{
+    border: 5px solid rgb(245, 142, 24);
+    border-radius: 10px;
+   
+}
+
+.row {
+    text-align: center;
+}
+
+.custtitle{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: black;
+    display: inline-flex;
+}
+
+
+
+  

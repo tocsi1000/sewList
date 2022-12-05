@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row" style="text-align:center">
+    <app-loading *ngIf="isLoading"></app-loading>
+  </div>
+   <div class="row"> 
+    <div class="col-xs-12">
+       <div *ngFor="let plan of plansList let i = index">
+        <div class="pattern col-xs-3">
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-check" 
+                (click)="onMarkStatus(i)"
+                [ngClass]="{isDone : plan.isDone==true}"></span>
+              </button>
+            <button type="button" (click)="onDelete(i)" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-trash"></span> 
+              </button>
+            <img class="img-responsive" style="margin:auto;" 
+            [src]="transform(plan.picPNG)">
+        </div>
+            
+    </div>
+</div>

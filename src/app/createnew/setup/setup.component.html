@@ -1,0 +1,57 @@
+<div class="container">
+    
+    <div *ngIf="!isSelected" class="col-xs-8 col-xs-offset-1">
+        <h3>Choose a pattern!</h3>
+        <div class="pattern" 
+        *ngFor="let pattern of allPatterns let i = index"
+        (mouseenter)="isHovered=i"
+        (mouseleave)="isHovered=-1"    
+        [ngClass]="{hoveredPattern: isHovered==i}">
+            <a style="cursor:pointer" 
+            (click)="onChoosePattern(i)"
+            >
+            <img class="img-responsive" 
+                src="{{pattern.imgURL}}">
+            {{pattern.name}}
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xs-8 col-xs-offset-1" *ngIf="isSelected">
+        <form #options="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group" *ngIf="isBPopt">
+                <label for="bodyparts">Select the amount of colorblocked parts</label>
+                <select class="form-control"  
+                id="bodyparts"
+                name="bodyparts"
+                ngModel
+                required>
+                <option *ngFor="let amount of parts"
+                    [value]="amount"
+                    name="amount"
+                >{{amount}}</option>
+            </select>
+            </div>
+
+            <div class="form-group" *ngIf="isPocketOpt">
+                <label for="pocket">Do you want a pocket?</label>
+                <select class="form-control"  
+                id="pocket"
+                name="pocket"
+                ngModel
+                required>
+                <option [value]="true"
+                    name="true"
+                >Sure!</option>
+                <option [value]="false"
+                    name="false"
+                >No, thank you.</option>
+            </select>
+            </div>
+
+            <button class="btn btn-primary" 
+            type="submit"
+            [disabled]="!options.valid">Start sketching!</button>
+        </form>
+</div>
+</div>

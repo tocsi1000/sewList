@@ -1,0 +1,65 @@
+<!doctype html>
+<div #screen>
+<svg height="100%" width="100%" viewBox="0 0 300 450" >
+  <defs>
+    <pattern *ngFor="let item of printedFabrics" [id]="item.name" patternUnits="userSpaceOnUse" 
+    width="100" height="100">
+		  <image [attr.href]="item.color" x="0" y="0" width="100" height="100" />
+		</pattern>
+  </defs>
+  <g transform="matrix(1.203324, 0, 0, 1.160015, -3.581965, -11.275553)">
+    <a #1 (click)="onChangeColor('fillColor1')">
+       <path style="stroke: rgb(0, 0, 0);" [attr.fill]="fillColor1"
+        d="M 57.895 313.569 C 59.526 313.569 59.924 338.016 59.45 338.016 C 59.71 340.619 200.38 343.749 200.194 341.889 C 199.967 341.813 201.903 312.481 202.916 312.819 L 57.895 313.569 Z"></path>
+        <path style="stroke: rgb(0, 0, 0); stroke-linejoin: round;" [attr.fill]="fillColor1"
+        d="M 17.807 298.143 C 17.807 299.439 42.416 305.223 42.416 306.389 C 38.875 312.811 35.59 318.37 35.616 323.316 C 36.236 322.101 24.035 316.633 17.617 317.18 C 17.801 317.548 18.628 299.784 17.807 298.143 Z"></path>
+        <path style="stroke: rgb(0, 0, 0); stroke-linejoin: round;" [attr.fill]="fillColor1"
+        d="M 214.602 306.36 C 214.915 306.191 221.581 322.605 220.182 323.362 C 220.182 322.029 239.014 318.958 239.014 319.584 C 237.168 319.584 238.844 298.804 239.711 298.804 L 214.602 306.36 Z"></path>        <polyline style="stroke: rgb(0, 0, 0); stroke-dasharray: 2px;" [attr.fill]="fillColor1"
+        points="141.18499755859375 147.9149932861328"></polyline>
+    </a>
+  </g>
+  <g transform="matrix(1.203324, 0, 0, 1.160015, -3.581965, -11.275553)">
+    <a #2 (click)="onChangeColor('fillColor2')">
+        <path style="stroke: rgb(0, 0, 0); stroke-linejoin: round;" [attr.fill]="fillColor2"
+        d="M 71.313 85.85 C 46.027 67.789 15.08 296.73 17.98 298.801 L 42.279 306.07 C 42.185 305.93 42.027 304.871 42.243 303.311 C 45.232 281.773 75.882 135.194 82.287 144.802 C 86.479 130.13 79.408 83.761 71.313 85.85 Z"></path>
+        <path style="stroke: rgb(0, 0, 0); stroke-linejoin: round;" [attr.fill]="fillColor2"
+        d="M 175.869 139.292 C 165.374 135.663 178.335 80.538 192.118 85.304 C 204.547 78.141 244.273 296.686 239.084 299.677 C 239.959 302.399 215.861 309.572 214.712 305.998 C 216.104 305.035 180.232 136.275 175.869 139.292 Z"></path>    </a>
+  </g>
+
+  <g transform="matrix(1.203324, 0, 0, 1.160015, -3.581965, -11.275553)">
+    <a #3 (click)="onChangeColor('fillColor3')">
+        <path style="stroke: rgb(0, 0, 0);" [attr.fill]="fillColor3"
+         d="M 64.943 86.688 C 90.009 57.588 198.6 74.813 193.063 88.128 C 186.996 85.152 174.712 135.191 174.771 147.141 C 173.532 145.902 193.167 302.591 202.672 312.614 C 203.491 329.003 58.243 313.652 58.243 313.652 C 58.243 313.652 80.237 163.123 79.665 146.986 C 79.093 130.849 75.774 89.816 64.943 86.688 Z"></path>
+    </a>
+  </g>
+
+  <g transform="matrix(1.203324, 0, 0, 1.160015, -3.581965, -11.275553)">
+    <a *ngIf="wantPockets" #4 (click)="onChangeColor('fillColor4')">
+        <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor4"
+        d="M 96.251 260.553 L 155.409 264.185 C 150.971 264.925 169.716 301.153 173.572 300.51 L 172.885 319.864 C 173.076 322.138 76.988 317.308 77.051 315.363 L 76.532 293.764 C 79.278 297.425 97.54 262.272 96.251 260.553 Z"></path>
+    </a>
+  </g>
+
+  <g transform="matrix(1.203324, 0, 0, 1.160015, -3.581965, -11.275553)">
+        <path style="stroke: rgb(0, 0, 0); fill: rgb(187, 186, 188); stroke-linejoin: round;" d="M 99.961 72.19 C 104.537 71.275 124.948 105.026 125.311 106.431 C 126.471 108.304 121.524 319.71 121.679 319.71 C 122.002 319.871 132.438 105.077 131.124 103.712 C 130.517 102.773 147.592 73.766 156.117 73.456 C 153.004 70.341 102.907 69.244 99.961 72.19 Z"></path>
+  </g>
+
+  <g transform="matrix(1.203324, 0, 0, 1.160015, -3.581965, -11.275553)">
+    <a *ngIf="wantedParts==2" #5 (click)="onChangeColor('fillColor5')">
+        <path style="stroke: rgb(0, 0, 0); stroke-linejoin: round;" [attr.fill]="fillColor5"
+        d="M 131.003 103.394 C 131.003 90.85 154.435 71.103 155.752 72.802 C 175.235 72.046 196.545 85.423 192.795 87.832 C 190.41 83.062 172.999 138.152 176.131 144.416 C 175.113 144.416 175.457 165.706 177.17 165.706 L 128.878 162.071 L 131.003 103.394 Z"></path>
+        <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor5"
+        d="M 78.963 158.889 L 124.724 162.071 L 126.023 106.64 C 126.939 102.976 104.774 73.116 101.617 72.369 C 100.127 69.851 66.796 78.866 62.412 88.336 C 75.246 91.642 81.183 135.204 78.963 158.889 Z"></path>      
+    </a>
+  </g>
+
+  <g transform="matrix(1.203324, 0, 0, 1.160015, -3.581965, -11.275553)">
+    <a #6 (click)="onChangeColor('fillColor6')">
+        <polyline [attr.stroke]="fillColor6" style="stroke-width: 3px; stroke-dasharray: 2px; fill: rgb(187, 186, 188); stroke-miterlimit: 1; stroke-dashoffset: 7px;" points="126.339 106.725 121.047 341.424 130.317 105.462"></polyline>
+        <ellipse style="stroke-miterlimit: 1; stroke: rgb(0, 0, 0);"
+        [attr.fill]="fillColor6" 
+        cx="123.092" cy="283.052" rx="2.943" ry="6.339"></ellipse>      
+    </a>
+ </g>
+</svg>
+</div>

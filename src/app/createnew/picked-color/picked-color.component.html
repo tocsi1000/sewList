@@ -1,0 +1,8 @@
+<div class="picPreview">
+    <div class="colorimage" *ngIf="hovered.PorP=='plain'" 
+    [ngStyle]="{'background-color': hovered.color}"
+    ></div>
+    <div class="colorimage" *ngIf="hovered.PorP!=='plain'" 
+    [ngStyle]="{'background-image': 'url('+hovered.color+')'}"
+    ></div> 
+</div>

@@ -1,0 +1,24 @@
+.navbar-default .navbar-brand {
+    color: rgb(245, 142, 24);
+}
+
+.navbar-default .navbar-nav>.active>a {
+    color:rgb(245, 142, 24);
+}
+
+.navbar-nav>a:focus {
+    background-color: rgb(245, 142, 24);
+}
+
+.navbar-nav>li>a:hover {
+    background-color: rgb(245, 142, 24);
+}
+
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #ccc;
+}
+
+.navbar-header>button {
+    float:right;
+    margin:15px;
+}

@@ -1,0 +1,93 @@
+.input-wrapper {
+    margin-top: 16px;
+    margin-left: 16px;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: auto;
+    height: 34px;
+    max-width: 316px;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .input-wrapper-input{
+    display: flex;
+    border-radius: 5px;
+    border:1px solid white;
+    padding: auto;
+    height: 32px;
+    width: 280px;
+  }
+
+  input[type="text"]:read-only {
+    background: white;
+    border-color: white;
+    box-shadow: none;
+  }
+  
+  .color-div {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid grey;
+  }
+  
+  .text {
+    flex: 1;
+    font-family: 'Helvetica';
+    line-height: 32px;
+  }
+
+  .buttondiv{
+    display:block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+  }
+
+  label {
+    font-size: medium;
+  }
+
+.fileInputProfileWrap {
+    width: 100%;
+    height: auto;
+}
+
+.fileInputProfile {
+    position: absolute;
+    height: 320px;
+    width: 320px;
+    z-index: 99;
+    opacity: 0;
+}
+.fileInputProfile[disabled] + .img-space{
+    pointer-events: none;
+    cursor: not-allowed!important;
+}
+
+.img-space {
+  border: dashed 1px #d3d3d3;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  height: auto;
+  width: fit-content;
+  padding: 10px;
+  min-height:175px;
+}
+
+.img-space img {
+  display: block;
+  width: 300px;
+  height: auto;
+  margin: auto;
+  cursor: pointer;
+}
+
+.image-wrap {
+  padding: 10px;
+  border: solid 1px #e0e0e0;
+  display: inline-block;
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<div #screen>
+<svg id="joggers" viewBox="0 0 300 450" width=300 height=450>
+  <defs>
+    <clipPath id="clippath13" transform="">
+      <path d="M 0 736.441 L 540 736.441 L 540 0 L 0 0 Z" style="fill: none; clip-rule: evenodd;"></path>
+    </clipPath>
+    <clipPath id="clip-1" transform="">
+      <path d="M 0 736.441 L 540 736.441 L 540 0 L 0 0 Z" style="fill: none; clip-rule: evenodd;"></path>
+    </clipPath>
+    <clipPath id="clip-3" transform="">
+      <path d="M 0 736.441 L 540 736.441 L 540 0 L 0 0 Z" style="fill: none; clip-rule: evenodd;"></path>
+    </clipPath>
+
+    <pattern *ngFor="let item of printedFabrics" [id]="item.name" 
+      patternUnits="userSpaceOnUse"
+      width="200" 
+      height="200"
+      >
+		  <image [attr.href]="item.color" x="0" y="0" width="200" height="200" />
+		</pattern>
+    
+
+  </defs>
+  <g>
+    <a #1  (click)="changeColor('fillColor1')">
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor1"
+      d="M 133.748 76.497 L 149.368 76.497 C 143.016 75.207 217.198 73.571 223.447 69.324 C 229.698 65.078 238.382 350.862 223.78 368.868 C 209.179 386.873 165.158 372.299 169.829 366.937 C 168.576 362.336 134.472 175.03 135.978 175.117 C 129.713 173.319 132.345 76.093 133.748 76.497 Z"></path>
+      <path style="stroke: rgb(0, 0, 0);" [attr.fill]="fillColor1"
+      d="M 132.938 79.649 C 132.938 79.649 53.934 40.248 47.276 69.845 C 28.921 151.445 51.343 370.002 68.947 382.284 C 74.315 386.029 128.829 383.202 126.436 371.086 C 135.161 368.841 134.419 183.741 132.938 158.946 C 137.221 159.66 142.611 81.261 132.938 79.649 Z">
+    </path>
+    </a>
+  </g>
+  <g>
+    <a *ngIf="wantedParts == 2" #2 (click)="changeColor('fillColor2')">
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor2"
+      d="M 154.261 282.034 L 231.648 248.829 C 233.991 251.593 231.817 365.352 224.107 367.934 C 222.921 369.82 169.912 371.014 168.992 365.473 C 167.923 366.01 155.211 283.824 154.261 282.034 Z"></path>
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor2"
+      d="M 133.414 287.162 C 131.439 289.147 136.088 359.738 126.033 370.437 C 115.977 381.136 85.292 385.665 69.852 382.595 C 61.95 381.834 48.724 317.958 52.209 318.845 C 61.061 329.218 134.121 291.165 133.414 287.162 Z"></path>
+    </a>
+  </g>
+  <g>
+    <a #3  (click)="changeColor('fillColor3')">
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor3" d="M 169.049 365.641 L 173.977 389.398 C 181.608 396.699 210.783 394.207 217.039 390.02 L 224.196 367.984 C 220.026 369.861 178.557 370.067 169.049 365.641 Z"></path>
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor3" d="M 72.352 375.912 L 76.612 399.52 C 84.511 406.812 116.219 406.079 122.08 400.142 L 130.279 377.022 C 122.405 379.296 110.505 380.47 99.294 380.505 C 87.837 380.539 77.343 378.306 72.352 375.912 Z" transform="matrix(0.975431, -0.220306, 0.220306, 0.975431, -83.629143, 31.897491)"></path>
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor3" d="M 47.258 68.968 C 52.767 63.52 60.211 36.033 55.216 25.673 C 83.453 36.94 200.175 35.73 209.051 25.673 C 203.524 44.508 220.537 66.287 223.142 68.565 C 214.551 87.187 47.761 82.344 47.258 68.968 Z"></path>
+    </a>
+  </g>
+
+  <g>
+    <a *ngIf="wantPockets" #4 (click)="changeColor('fillColor4')">
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor4" 
+      d="M 43.664 90.449 C 42.743 90.142 41.333 135.423 42.035 135.657 C 41.453 136.733 57.153 135.488 63.181 122.979 C 65.017 119.169 65.488 112.811 64.82 108.518 C 63.829 102.149 58.447 94.679 43.664 90.449 Z"></path>
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor4"
+      d="M 206.741 136.214 C 205.82 136.521 203.392 91.24 204.094 91.006 C 203.512 89.93 220.23 91.175 226.258 103.684 C 228.094 107.494 228.565 113.852 227.897 118.145 C 226.906 124.514 221.524 131.984 206.741 136.214 Z" transform="matrix(-1, 0, 0, -1, 433.108093, 226.917816)"></path>
+    </a>
+  </g>
+
+  <g>
+    <a *ngIf="wantPockets"  #5 (click)="changeColor('fillColor5')">
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor5" 
+      d="M 43.867 93.707 C 56.642 97.746 61.182 103.298 61.948 109.821 C 62.465 114.223 61.594 119.622 59.112 123.186 C 54.504 129.802 46.177 132.888 42.238 131.991 C 41.676 131.851 42.353 93.329 43.867 93.707 Z"></path>
+      <path style="stroke: rgb(0, 0, 0)" [attr.fill]="fillColor5" 
+      d="M 209.779 132.88 C 222.554 128.841 227.094 123.289 227.86 116.766 C 228.377 112.364 227.506 106.965 225.024 103.401 C 220.416 96.785 210.867 93.495 206.928 94.392 C 206.366 94.532 208.265 133.258 209.779 132.88 Z" transform="matrix(-1, 0, 0, -1, 435.956848, 227.326614)"></path>
+    </a>
+  </g>
+ 
+  <g style="clip-path: url(#clippath13);" transform="matrix(0.890168, 0, 0, -0.929729, 59.223179, 734.72113)">
+    <g transform="matrix(1, 0, 0, 1, 186.043152, 701.346558)">
+      <a *ngIf="wantPockets">
+      <path d="M 0 0 C -23.45 -0.689 -40.093 -29.837 -37.636 -52.36 C -35.179 -74.884 -21.595 -81.747 4.268 -80.317" style="fill: none; stroke: rgb(29, 29, 27); stroke-opacity: 1; stroke-miterlimit: 0; stroke-width: 0.3px; stroke-dasharray: 3, 1, 3, 1; stroke-dashoffset: 0px;"></path>
+    </a>
+    </g>
+  </g>
+  <g style="clip-path: url(#clip-1);" transform="matrix(-0.890168, 0, 0, -0.929729, 210.154694, 735.146912)">
+    <g transform="matrix(1, 0, 0, 1, 186.043152, 701.346558)">
+      <a *ngIf="wantPockets">
+      <path d="M -0.784 -2.097 C -24.234 -2.786 -40.877 -31.934 -38.42 -54.457 C -35.963 -76.981 -22.379 -83.844 3.484 -82.414" style="fill: none; stroke: rgb(29, 29, 27); stroke-opacity: 1; stroke-miterlimit: 0; stroke-width: 0.3px; stroke-dasharray: 3, 1, 3, 1; stroke-dashoffset: 0px;"></path>
+    </a>
+    </g>
+  </g>
+  <g style="clip-path: url(#clip-3);" transform="matrix(1, 0, 0, -1, 17.832302, 851.343384)">
+    <g transform="translate(183.538 690.8091)"></g>
+  </g>
+  
+</svg>
+</div>

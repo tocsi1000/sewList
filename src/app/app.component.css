@@ -1,0 +1,14 @@
+.bg {
+    background-image: url("../assets/background.png");
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+  }
+
+  a{
+    color:grey;
+}
+
+
+

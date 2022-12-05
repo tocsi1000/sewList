@@ -1,0 +1,37 @@
+<div class="container" style="text-align:center">
+    <router-outlet></router-outlet>
+    <div class="col-xs-12" *ngIf="allsetup">
+        <div class="row" style="text-align:center">
+            <app-loading *ngIf="isLoading"></app-loading>
+        </div>
+        <div class="row">
+            <h2 style="text-align: center;">{{selectedPattern.name}}</h2>
+        </div>
+        <div class="row">
+                <button class="btn btn-primary buttondiv" (click)="onSavePlan()">Save</button>
+        </div>
+    
+        <div class="col-xs-12 col-lg-5">
+            <div class="row">
+                <div class="boxofpalette">
+                    <app-coloring></app-coloring>
+                </div>
+            </div>
+        </div>
+            
+        <div class="col-xs-12 col-lg-5">
+            <div class="row">
+            <div class="boxofpatterns">
+                <app-raglandress *ngIf="selectedPatternIndex==2"></app-raglandress>
+                <app-fourseasons *ngIf="selectedPatternIndex==1"></app-fourseasons>               
+                <app-raglan-l *ngIf="selectedPatternIndex==0"></app-raglan-l>
+                <app-sweater *ngIf="selectedPatternIndex==3"></app-sweater>
+            </div>
+        </div>
+
+        </div>
+        <div class="col-xs-2 picPreview" *ngIf="hovered">
+            <app-picked-color></app-picked-color>
+        </div>
+    </div>
+</div>

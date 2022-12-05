@@ -1,0 +1,64 @@
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="filter">
+        <label for="warm">Warm</label>
+        <input id="warm" type="checkbox" 
+            [(ngModel)]="filteredType.warm"
+            (ngModelChange)="filterChange()">
+        </div>
+        <div class="filter">
+        <label for="mid">Midwarm</label>
+        <input id="mid" type="checkbox" 
+            [(ngModel)]="filteredType.mid"
+            (ngModelChange)="filterChange()">
+        </div>
+
+        <div class="filter">
+        <label for="light">Lightweight</label>
+        <input id="light" type="checkbox" 
+            [(ngModel)]="filteredType.light"
+            (ngModelChange)="filterChange()">
+        </div>
+
+        <div class="filter">
+        <label for="rib">Ribbing</label>
+        <input id="rib" type="checkbox" 
+            [(ngModel)]="filteredType.rib"
+            (ngModelChange)="filterChange()">
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <label for="printed">Printed</label>
+        <input id="printed" type="checkbox"
+            [(ngModel)]="filteredPorP.printed"
+            (ngModelChange)="filterChange()">
+    
+        <label for="plain">Plain</label>
+        <input id="plain" type="checkbox"
+            [(ngModel)]="filteredPorP.plain"
+            (ngModelChange)="filterChange()">
+    </div>       
+</div> 
+<hr style="border: 2px solid grey; border-radius: 4px;">
+
+    
+ <div class="col-xs-12">
+    <div class="col-xs-1 boxofcolor" style="background-color: grey;" 
+    *ngFor="let fabric of filteredFabrics let i=index" 
+     (click)="onPickColor(i)"
+     (mouseenter)="onHover(i)"
+     (mouseleave)="offHover()">
+        <div class="colorimage" *ngIf="fabric.PorP=='plain'" 
+        [ngStyle]="{'background-color': fabric.color}"
+        [ngClass]="{'selected': i==filteredID}"
+        
+        ></div>
+        <div class="colorimage" *ngIf="fabric.PorP!=='plain'" 
+        [ngStyle]="{'background-image': 'url('+fabric.color+')'}"
+        [ngClass]="{'selected': i==filteredID}"
+        ></div> 
+    </div>
+</div>

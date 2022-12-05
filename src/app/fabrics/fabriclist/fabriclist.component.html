@@ -1,0 +1,76 @@
+<div class="container">
+     <div class="row">
+
+        <a (click)="clickLeft()" style="cursor:pointer">
+                <svg viewBox="0 0 91 89" width="91" height="89" style="float:left; padding-left:5px;">
+                        <path style="stroke: rgb(0, 0, 0); fill: none; stroke-width: 2px; stroke-linejoin: round;" d="M 85.361 17.763 C 89.902 24.542 90.487 67.292 71.326 44.178 C 69.959 42.529 63.962 32.307 58.395 17.763 C 32.888 -33.037 14.358 69.692 44.717 55.903 C 68.949 44.897 59.854 90.018 3.147 80.862 L 9.281 77.213"></path>
+                        <line style="fill:none; stroke: rgb(0, 0, 0); stroke-width: 2px; stroke-linejoin: round;" x1="8.616" y1="85.291" x2="2.969" y2="80.67"></line>
+                </svg>
+        </a>
+
+        <p class="custtitle">{{filteredType[filteredCount].name}}</p>
+        
+        <a (click)="clickRight()" style="cursor:pointer">
+                <svg viewBox="0 0 91 89" width="91" height="89" style="float:right; padding-right:15px;">
+                        <path style="stroke: rgb(0, 0, 0); stroke-width: 2px; stroke-linejoin: round; fill: none;" d="M 85.183 67.88 C 89.724 61.101 90.309 18.351 71.148 41.465 C 69.781 43.114 63.784 53.336 58.217 67.88 C 32.71 118.68 14.18 15.951 44.539 29.74 C 68.771 40.746 59.676 -4.375 2.969 4.781 L 9.103 8.43" transform="matrix(-1, 0, 0, -1, 90.791313, 85.643166)"></path>
+                        <line style="stroke: rgb(0, 0, 0); stroke-width: 2px; stroke-linejoin: round; fill: none;" x1="88" y1="80.67" x2="82.353" y2="85.291" transform="matrix(-1, 0, 0, -1, 170.352997, 165.960999)"></line>
+                </svg>
+        </a>
+</div>
+
+<hr class="customhr">
+                
+        <div class="row" *ngIf="isLoading">
+                        <app-loading></app-loading>
+                
+        </div>          
+        <div class="row">
+        <div class="col-xs-12 slidebox" 
+        *ngIf="filteredCount==2 &&!isLoading"
+        >
+                <div class="col-xs-6 col-sm-3 col-md-2"
+                *ngFor="let fabricitem of filteredFabrics let i=index">
+                <app-fabricitem  
+                        [fabricitem]="fabricitem"
+                        [index]="getIndex(i)"></app-fabricitem>
+                </div>
+
+        </div>
+
+        <div class="col-xs-12 slidebox" 
+        *ngIf="filteredCount==1 &&!isLoading" 
+        >
+                <div class="col-xs-6 col-sm-3 col-md-2"
+                *ngFor="let fabricitem of filteredFabrics let i=index">
+                <app-fabricitem  
+                        [fabricitem]="fabricitem"
+                        [index]="getIndex(i)"></app-fabricitem>
+                </div>
+
+        </div>
+
+        <div class="col-xs-12 slidebox" 
+        *ngIf="filteredCount==0 &&!isLoading" 
+        >
+                <div class="col-xs-6 col-sm-3 col-md-2"
+                *ngFor="let fabricitem of filteredFabrics let i=index">
+                <app-fabricitem  
+                        [fabricitem]="fabricitem"
+                        [index]="getIndex(i)"></app-fabricitem>
+                </div>
+
+        </div>
+
+        <div class="col-xs-12 slidebox" 
+        *ngIf="filteredCount==3 &&!isLoading"
+        >
+                <div class="col-xs-6 col-sm-3 col-md-2"
+                *ngFor="let fabricitem of filteredFabrics let i=index">
+                <app-fabricitem  
+                        [fabricitem]="fabricitem"
+                        [index]="getIndex(i)"></app-fabricitem>
+                </div>
+
+        </div>
+</div>
+</div>

@@ -1,0 +1,13 @@
+  :host {
+    display: block;
+    width: auto;
+    /* padding: 16px; */
+  }
+  .color-wrapper {
+    display: flex;
+    width:auto;
+    margin:auto;
+    height: 250px;
+  }
+  
+  
